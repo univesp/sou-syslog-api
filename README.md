@@ -26,7 +26,7 @@ $ cp .env.example .env
 $ docker-compose up --build
 ```
 
-Este comando com o parametro '--build' é necessário somente a primeira vez que usar a aplicação após buildar uma vez use:
+Este comando com o parametro '--build' é necessário somente a primeira vez que usar a aplicação ou ao inserir uma nova dependência, com exceção nesses dos casos descritos acima, você poderá utilizar:
 ```
 $ docker-compose up
 ```
