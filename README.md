@@ -19,7 +19,7 @@ $ cd sou-syslog-api
 $ cp .env.example .env
 ```
 
-**3**. Copie os dados do arquivo [.env](https://drive.google.com/a/univesp.br/file/d/1tELg6ew2WmL_glhGw32xNI7z-qWbx9gp/view?usp=sharing) (Acesso a este link está disponível apenas para mantenedores) para o .env do seu projeto
+**3**. Copie os dados do arquivo [.env](https://drive.google.com/a/univesp.br/file/d/1qfARsr0KGxXnfcVv1zDKMJPXUjvIP6ZZ/view?usp=sharing) (Acesso a este link está disponível apenas para mantenedores) para o .env do seu projeto
 
 **4**. Inicie a aplicação
 ```
