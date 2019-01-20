@@ -1,13 +1,11 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-	host: process.env.DB_HOST,
-	dialect: 'mysql',
-	port: 41890
-});
+const { env } = process;
 
-sequelize.sync({ force: true }).then(() => {
-	console.log(`Database & tables created!`);
+const sequelize = new Sequelize(env.DB_NAME, env.DB_USER, env.DB_PASSWORD, {
+	host: env.DB_HOST,
+	dialect: 'mysql',
+	port: env.DB_PORT || 3306
 });
 
 module.exports = sequelize;
