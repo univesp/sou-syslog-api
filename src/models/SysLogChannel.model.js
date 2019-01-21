@@ -1,23 +1,23 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../../bin/sequelize');
 
-const SysLogServiceSchema = {
-	sysLogServiceId: {
+const SysLogChannelSchema = {
+	sysLogChannelId: {
 		type: Sequelize.INTEGER(11),
 		primaryKey: true,
 		autoIncrement: true
 	},
-	sysLogService: {
+	sysLogChannel: {
 		type: Sequelize.STRING(24)
 	},
-	sysLogServiceCreatedAt: {
+	sysLogChannelCreatedAt: {
 		type: Sequelize.DATE,
 		defautlValue: Sequelize.literal('NOW()')
 	},
-	sysLogServiceUpdatedAt: {
+	sysLogChannelUpdatedAt: {
 		type: Sequelize.DATE,
 		defautlValue: Sequelize.literal('NOW()')
 	}
 };
 
-module.exports = sequelize.define('SysLogServices', SysLogServiceSchema);
+module.exports = sequelize.define('SysLogChannels', SysLogChannelSchema);
