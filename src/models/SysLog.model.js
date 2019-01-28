@@ -1,6 +1,10 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../../bin/sequelize');
 
+const SysLogTypes = require('./SysLogType.model');
+const SysLogModules = require('./sysLogModule.model');
+const SysLogChannels = require('./sysLogChannel.model');
+
 const SysLogSchema = {
 	sysLogId: {
 		type: Sequelize.INTEGER(11),
@@ -62,4 +66,10 @@ const SysLogSchema = {
 	}
 };
 
-module.exports = sequelize.define('SysLog', SysLogSchema);
+const SysLog = sequelize.define('SysLog', SysLogSchema);
+
+SysLog.belongsTo(SysLogTypes, { foreignKey: 'sysLogTypeId', targetKey: 'sysLogTypeId' });
+SysLog.belongsTo(SysLogModules, { foreignKey: 'sysLogModuleId', targetKey: 'sysLogModuleId' });
+SysLog.belongsTo(SysLogChannels, { foreignKey: 'sysLogChannelId', targetKey: 'sysLogChannelId' });
+
+module.exports = SysLog;

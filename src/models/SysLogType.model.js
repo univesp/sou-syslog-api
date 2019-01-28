@@ -1,6 +1,9 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../../bin/sequelize');
 
+const SysLog = require('./SysLog.model');
+const SysLogMobile = require('./SysLogMobile.model');
+
 const SysLogTypesSchema = {
 	sysLogTypeId: {
 		type: Sequelize.INTEGER(11),
@@ -20,4 +23,9 @@ const SysLogTypesSchema = {
 	}
 };
 
-module.exports = sequelize.define('SysLogTypes', SysLogTypesSchema);
+const SysLogType = sequelize.define('SysLogTypes', SysLogTypesSchema);
+
+SysLogType.hasMany(SysLog, { foreignKey: 'sysLogTypeId', sourceKey: 'sysLogTypeId' });
+SysLogType.hasMany(SysLogMobile, { foreignKey: 'sysLogTypeId', sourceKey: 'sysLogTypeId' });
+
+module.exports = SysLogType;
